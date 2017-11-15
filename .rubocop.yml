@@ -5,23 +5,29 @@
 inherit_from:
   - .rubocop_enabled.yml
   - .rubocop_disabled.yml
-
 # Common configuration.
 AllCops:
-    eslint:
-  enabled: true
-  config_file: .eslintrc
-haml:
-  enabled: true
-  config_file: .haml-lint.yml
-javascript:
-  enabled: false
-ruby:
-  enabled: true
-  config_file: .rubocop.yml
-scss:
-  enabled: true
-  config_file: .scss-lint.yml
+
+  # Include gemspec and Rakefile
+  Include:
+    - '**/*.gemspec'
+  Exclude:
+    - 'vendor/**/*'
+    - 'config/unicorn.rb'
+    - 'bin/*'
+    - 'db/**/*'
+    - 'spec/**/*'
+    - 'script/rails'
+    - 'script/cucumber'
+    - 'config/**/*'
+    - 'features/**/*'
+    - 'Gemfile'
+    - 'Gemfile.lock'
+    - 'lib/**/*'
+    - 'Guardfile'
+    - 'Capfile'
+    - 'Rakefile'
+    - 'config.ru'
 Documentation:
     Enabled: false
 # By default, the rails cops are not run. Override in project or home
@@ -348,15 +354,17 @@ Style/ParenthesesAroundCondition:
 
 Style/PercentLiteralDelimiters:
   PreferredDelimiters:
-    '%':  ()
-    '%i': ()
-    '%q': ()
-    '%Q': ()
+
+    '%':  "[]"
+    '%i': "[]"
+    '%q': "[]"
+    '%Q': "[]"
     '%r': '{}'
-    '%s': ()
-    '%w': ()
-    '%W': ()
-    '%x': ()
+    '%s': "[]"
+    '%w': "[]"
+    '%W': "[]"
+    '%x': "[]"
+
 
 Naming/PredicateName:
   NamePrefixBlacklist:
