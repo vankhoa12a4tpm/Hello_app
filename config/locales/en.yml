@@ -63,3 +63,5 @@ en:
     title: "Login"
     p: "New user? "
     link: "Sign up now!"
+    remember: "Remember me on this computer"
+
