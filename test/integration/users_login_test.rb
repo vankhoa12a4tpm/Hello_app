@@ -3,7 +3,11 @@ require "test_helper"
 class UsersLoginTest < ActionDispatch::IntegrationTest
   def setup
 <<<<<<< HEAD
+<<<<<<< HEAD
     @user = users :michael
+=======
+    @user = users(:michael)
+>>>>>>> 6214cf5679ac36e9d98a11d3a0db83f052f64539
 =======
     @user = users(:michael)
 >>>>>>> 6214cf5679ac36e9d98a11d3a0db83f052f64539
